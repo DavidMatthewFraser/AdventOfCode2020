@@ -75,8 +75,10 @@ void generatePermutations(string perm) {
 }
 
 void printPermutations(set<int>& s) {
-    for(int i: s)
-        cout << i << endl;
+    for(int i: s) {
+        if(i > 100 && i < 900) 
+            cout << i << endl;
+    }
 }
 
 int main() {
