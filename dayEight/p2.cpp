@@ -44,25 +44,25 @@ int findNewIndex() {
         if(instructions.at(i).first == "jmp" || instructions.at(i).first == "nop")
             return i;
     }
-    cout << accumulator << endl;
+    //cout << accumulator << endl;
     cout << "ERROR" << endl;
     exit(-1);
 }
 
 void revertIndex() {
-    cout << "Inside revert, index" << index_timesSwapped.first << " swapped from " <<
+    //cout << "Inside revert, index" << index_timesSwapped.first << " swapped from " <<
     instructions.at(index_timesSwapped.first).first;
     triedIndexes.insert(index_timesSwapped.first);
     if(instructions.at(index_timesSwapped.first).first == "jmp")
        instructions.at(index_timesSwapped.first).first = "nop";
    else
        instructions.at(index_timesSwapped.first).first = "jmp";
-    cout << " to " << instructions.at(index_timesSwapped.first).first << endl;
+    //cout << " to " << instructions.at(index_timesSwapped.first).first << endl;
 
 }
 
 void changeInstruction() {
-   cout << index_timesSwapped.first << " " <<  index_timesSwapped.second << " " << endl;
+   //cout << index_timesSwapped.first << " " <<  index_timesSwapped.second << " " << endl;
    if(triedIndexes.size() != 0)
        revertIndex();
    index_timesSwapped.first = findNewIndex(); 
@@ -97,8 +97,8 @@ int main() {
         pair<int, int> cpuResult = cpu(instructions.at(i));
         accumulator += cpuResult.first;
         i += cpuResult.second;
-        cout << "inside cpu" << endl;
-        cout << "accumulator " << cpuResult.first << " index " << cpuResult.second << endl; 
+        //cout << "inside cpu" << endl;
+        //cout << "accumulator " << cpuResult.first << " index " << cpuResult.second << endl; 
         if(inSet(i, visited)) {
             changeInstruction();
             accumulator = 0;
