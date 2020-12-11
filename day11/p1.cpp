@@ -12,14 +12,6 @@ void printBoard(vector<vector<pair<char, char>>> tiles) {
     }
 }
 
-void calcAction() {
-    int x = 0;
-}
-
-void doAction() {
-    int x = 0;
-}
-
 int main() {
     ifstream infile("input.txt");
     char tile;
